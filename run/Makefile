@@ -5,12 +5,18 @@
 #
 
 help:
+	@echo
 	@echo "Usage: make SIMULATOR TUTORIAL=NUM"
 	@echo "  Runs a simulation for the specified tutorial number using the specified simulator."
 	@echo "  SIMULATOR can be 'modelsim', 'questa', 'incisive', or 'vcs'."
 	@echo "  NUM can be 1, 2, 3, 4, 5, 6, 7, 8, 9, or 15."
+	@echo
 	@echo "Example: make vcs TUTORIAL=6"
-	@echo "  Runs a simulation for tutorial #6 using VCS."
+	@echo "  Runs a simulation for the tutorial #6 using VCS."
+	@echo
+	@echo "Make sure you have the environment variable of UVM_HOME, which points to the location of the UVM library."
+	@echo "  For example, 'export UVM_HOME=~/downloads/uvm-1.1d'"
+	@echo
 
 # conditionals
 
