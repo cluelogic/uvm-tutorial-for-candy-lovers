@@ -1,24 +1,20 @@
 #
 # Makefile
 #
-# NOTE: Make sure to set the UVM_HOME environment variable before running a simulation.
-#
 
 help:
-	@echo
 	@echo "Usage: make SIMULATOR TUTORIAL=NUM"
 	@echo "  Runs a simulation for the specified tutorial number using the specified simulator."
-	@echo "  SIMULATOR can be 'modelsim', 'questa', 'incisive', or 'vcs'."
+	@echo "  SIMULATOR can be 'modelsim' (see NOTE below), 'questa', 'incisive', or 'vcs'."
 	@echo "  NUM can be 1, 2, 3, 4, 5, 6, 7, 8, 9, or 15."
 	@echo
 	@echo "Example: make vcs TUTORIAL=6"
 	@echo "  Runs a simulation for the tutorial #6 using VCS."
 	@echo
-	@echo "Make sure you have the environment variable of UVM_HOME, which points to the location of the UVM library."
-	@echo "  For example, 'export UVM_HOME=~/downloads/uvm-1.1d'"
-	@echo
+	@echo "NOTE: If 'modelsim' is used, randomization and coverage will be disabled.
 
 # conditionals
+#-------------------------------------------------------------------------------
 
 tutorial_file := no_source_code.sv
 testname := no_test
@@ -73,12 +69,12 @@ ifeq "$(TUTORIAL)" "15"
   testname := jelly_bean_test
 endif
 
-# constants
+# variables
+#-------------------------------------------------------------------------------
 
-src_dir  := ../src
-test_dir := ../test
-compile_files := $(UVM_HOME)/src/uvm_pkg.sv $(UVM_HOME)/src/dpi/uvm_dpi.cc $(src_dir)/$(tutorial_file)
-compile_opts  := +incdir+$(src_dir)+$(test_dir)+$(UVM_HOME)/src +define+TUTORIAL=$(TUTORIAL)
+src_dir       := ../src
+compile_files := $(src_dir)/$(tutorial_file)
+compile_opts  := +define+TUTORIAL=$(TUTORIAL)
 run_opts      := +UVM_TESTNAME=$(testname)
 top_module    := top
 

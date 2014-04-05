@@ -371,8 +371,7 @@ class jelly_bean_sequence extends uvm_sequence#( jelly_bean_transaction );
 
    task body();
       jelly_bean_transaction jb_tx;
-      jb_tx = jelly_bean_transaction::type_id::create( .name( "jb_tx" ),
-                                                       .contxt( get_full_name()));
+      jb_tx = jelly_bean_transaction::type_id::create( .name( "jb_tx" ) );
       start_item( jb_tx );
       jb_tx.flavor     = jelly_bean_types::APPLE;
       jb_tx.color      = jelly_bean_types::GREEN;
@@ -486,16 +485,14 @@ class jelly_bean_monitor extends uvm_monitor;
          jelly_bean_transaction jb_tx;
          @jb_if.slave_cb;
          if ( jb_if.command == jelly_bean_types::READ ) begin
-            jb_tx = jelly_bean_transaction::type_id::create( .name( "jb_tx" ),
-                                                             .contxt( get_full_name()));
+            jb_tx = jelly_bean_transaction::type_id::create( .name( "jb_tx" ) );
             jb_tx.command = jelly_bean_types::command_e'( jb_if.command );
             @jb_if.master_cb;
             jb_tx.taste = jelly_bean_types::taste_e'( jb_if.taste );
             jb_ap.write( jb_tx );
          end else if ( jb_if.command == jelly_bean_types::WRITE &&
                        jb_if.slave_cb.flavor != jelly_bean_types::NO_FLAVOR ) begin
-            jb_tx = jelly_bean_transaction::type_id::create( .name( "jb_tx" ),
-                                                             .contxt( get_full_name()));
+            jb_tx = jelly_bean_transaction::type_id::create( .name( "jb_tx" ) );
             jb_tx.command    = jelly_bean_types::command_e'( jb_if.command );
             jb_tx.flavor     = jelly_bean_types::flavor_e'( jb_if.slave_cb.flavor );
             jb_tx.color      = jelly_bean_types::color_e'( jb_if.slave_cb.color );
@@ -783,8 +780,7 @@ class jelly_bean_reg_test extends jelly_bean_base_test;
       jelly_bean_reg_sequence jb_reg_seq;
 
       phase.raise_objection( .obj( this ) );
-      jb_reg_seq = jelly_bean_reg_sequence::type_id::create( .name( "jb_reg_seq" ),
-                                                             .contxt( get_full_name()));
+      jb_reg_seq = jelly_bean_reg_sequence::type_id::create( .name( "jb_reg_seq" ) );
       jb_reg_seq.model = jb_reg_block;
       jb_reg_seq.start( .sequencer( jb_env.jb_agent.jb_seqr ) );
       
@@ -809,8 +805,7 @@ class jelly_bean_reg_hw_reset_test extends jelly_bean_base_test;
       uvm_reg_hw_reset_seq reg_hw_reset_seq;
 
       phase.raise_objection( .obj( this ) );
-      reg_hw_reset_seq = uvm_reg_hw_reset_seq::type_id::create( .name( "reg_hw_reset_seq" ),
-                                                                .contxt( get_full_name()));
+      reg_hw_reset_seq = uvm_reg_hw_reset_seq::type_id::create( .name( "reg_hw_reset_seq" ) );
       reg_hw_reset_seq.model = jb_reg_block;
       reg_hw_reset_seq.start( .sequencer( jb_env.jb_agent.jb_seqr ) );
       

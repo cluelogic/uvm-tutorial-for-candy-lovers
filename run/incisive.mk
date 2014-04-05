@@ -8,7 +8,7 @@
 
 # constants
 
-incisive_compile_opts := $(compile_opts) +define+CL_USE_INCISIVE
+incisive_compile_opts := $(compile_opts) -uvmhome $(UVM_HOME) +define+CL_USE_INCISIVE
 incisive_run_opts     := $(run_opts)
 
 # targets

@@ -9,7 +9,7 @@ MODELSIM_LIB_NAME := work
 
 # constants
 
-modelsim_compile_opts := $(compile_opts) +define+CL_USE_MODELSIM
+modelsim_compile_opts := $(compile_opts) +incdir+$(UVM_HOME)/src +define+CL_USE_MODELSIM
 modelsim_run_opts     := $(run_opts)
 modelsim_run_cmd_file := modelsim.cmd
 
