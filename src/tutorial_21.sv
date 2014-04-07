@@ -1,6 +1,6 @@
 //==============================================================================
-// tutorial_20.sv (v0.1.0) - Source code for "UVM Tutorial for Candy Lovers"
-//                           Post #20
+// tutorial_21.sv (v0.1.0) - Source code for "UVM Tutorial for Candy Lovers"
+//                           Post #21
 //
 // The MIT License (MIT)
 //
