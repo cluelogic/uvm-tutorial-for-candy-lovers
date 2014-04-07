@@ -6,7 +6,8 @@ This is a source code repo for [UVM Tutorial for Candy Lovers](http://cluelogic.
 - `src/tutorial_7_and_8.sv`: Covers Tutorials #7 and #8.
 - `src/tutorial_9.sv`: Covers Tutorial #9.
 - `src/tutorial_15.sv`: Covers Tutorial #15.
-- There is no source code associated with Tutorials #10, 11, 12, 13, 14, 16, 17, 18, or 19.
+- `src/tutorial_21.sv`: Covers Tutorial #21.
+- There is no source code associated with Tutorials #10, 11, 12, 13, 14, 16, 17, 18, 19, or 20.
 
 ###How to run
 1. Visit https://github.com/cluelogic/uvm-tutorial-for-candy-lovers (this page) and click the **Download ZIP** button.

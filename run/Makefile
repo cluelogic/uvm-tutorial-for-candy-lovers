@@ -6,7 +6,7 @@ help:
 	@echo "Usage: make SIMULATOR TUTORIAL=NUM"
 	@echo "  Runs a simulation for the specified tutorial number using the specified simulator."
 	@echo "  SIMULATOR can be 'modelsim', 'questa', 'incisive', or 'vcs'."
-	@echo "  NUM can be 1, 2, 3, 4, 5, 6, 7, 8, 9, 15, or 20."
+	@echo "  NUM can be 1, 2, 3, 4, 5, 6, 7, 8, 9, 15, or 21."
 	@echo "Example: make vcs TUTORIAL=6"
 	@echo "  Runs a simulation for tutorial #6 using VCS."
 
@@ -66,8 +66,8 @@ ifeq "$(TUTORIAL)" "15"
   testname := jelly_bean_test
 endif
 
-ifeq "$(TUTORIAL)" "20"
-  tutorial_file := tutorial_20.sv
+ifeq "$(TUTORIAL)" "21"
+  tutorial_file := tutorial_21.sv
   testname := jelly_bean_test
 endif
 
