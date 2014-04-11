@@ -9,14 +9,14 @@ This is a source code repo for [UVM Tutorial for Candy Lovers](http://cluelogic.
 - `src/tutorial_21.sv`: for Tutorial #21.
 - There is no source code associated with Tutorials #10, 11, 12, 13, 14, 16, 17, 18, 19, or 20.
 
-###How to run (using git)
+###How to install (using git)
 1. `git clone https://github.com/cluelogic/uvm-tutorial-for-candy-lovers`
 2. Go to the **run** directory: `cd uvm-tutorial-for-candy-lovers/run`
 3. Check **make** options: `make help`
 4. Run a simulation using the options listed in the previous step.
 
-####How to run (traditional way)
+###How to install (traditional way)
 1. Click the **Download ZIP** button on the right.
 2. Unzip the source code: `unzip uvm-tutorial-for-candy-lovers-master.zip`
 3. Go to the **run** directory: `cd uvm-tutorial-for-candy-lovers-master/run`
-4. Continue the steps from #3 of **How to run (using git)** above.
+4. Continue the steps from #3 of **How to install (using git)** above.
