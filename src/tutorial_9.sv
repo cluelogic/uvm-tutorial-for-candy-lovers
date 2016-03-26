@@ -453,7 +453,10 @@ class jelly_bean_driver extends uvm_driver#( jelly_bean_transaction );
             jb_if.master_cb.color        <= jb_tx.color;
             jb_if.master_cb.sugar_free   <= jb_tx.sugar_free;
             jb_if.master_cb.sour         <= jb_tx.sour;
-         end
+         end else if ( jb_tx.command == jelly_bean_types::READ ) begin
+            @jb_if.master_cb;
+	    jb_tx.taste = jelly_bean_types::taste_e'( jb_if.master_cb.taste );
+	 end
          seq_item_port.item_done();
       end
    endtask: main_phase
@@ -845,10 +848,12 @@ module jelly_bean_taster( jelly_bean_if.slave_mp jb_slave_if );
          color      <= jb_slave_if.color;
          sugar_free <= jb_slave_if.sugar_free;
          sour       <= jb_slave_if.sour;
-      end else if ( jb_slave_if.command == jelly_bean_types::READ ) begin
-         jb_slave_if.taste <= taste;
+//    end else if ( jb_slave_if.command == jelly_bean_types::READ ) begin
+//       jb_slave_if.taste <= taste;
       end
    end
+
+   assign jb_slave_if.taste = taste;
 
    always @ ( posedge jb_slave_if.clk ) begin
       if ( jb_slave_if.flavor == jelly_bean_types::CHOCOLATE &&
