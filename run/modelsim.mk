@@ -9,11 +9,11 @@ MODELSIM_LIB_NAME := work
 
 # constants
 
-modelsim_compile_opts := $(compile_opts) +incdir+$(UVM_HOME)/src +define+CL_USE_MODELSIM 
+modelsim_compile_opts := $(compile_opts) +incdir+$(UVM_HOME)/src +define+CL_USE_MODELSIM -ccflags "-DQUESTA"
 modelsim_run_opts     := $(run_opts)
 modelsim_run_cmd_file := modelsim.cmd
 
-compile_files := $(compile_files) $(UVM_HOME)/src/uvm_pkg.sv $(UVM_HOME)/src/dpi/uvm_dpi.cc
+compile_files := $(UVM_HOME)/src/uvm_pkg.sv $(UVM_HOME)/src/dpi/uvm_dpi.cc $(compile_files) 
 
 # targets
 
